@@ -1,0 +1,39 @@
+# assuming bitcoind binary is /dogecoin/daemon/dogecoind
+# assuming chmod+x /dogecoin/daemon/dogecoind
+# assuming bitcoin-cli binary is /dogecoin/daemon/dogecoin-cli
+# assuming chmod+x /dogecoin/daemon/dogecoin-cli
+#
+# Copy the service file:
+# cp ./dogecoind.service /lib/systemd/system/dogecoind.service
+# chmod 644 /lib/systemd/system/dogecoind.service
+#
+# Install service file:
+# systemctl daemon-reload
+# systemctl enable dogecoind.service
+# Run service:
+# systemctl start dogecoind.service
+# Check status:
+# systemctl status dogecoind.service
+# Stop service:
+# systemctl stop dogecoind.service
+#
+# Remove service:
+# systemctl disable dogecoind.service
+
+[Unit]
+Description=Dogecoin Deamon
+After=syslog.target
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/dogecoin/data/dogecoind.pid
+ExecStart=/dogecoin/daemon/dogecoind -daemon -datadir=/dogecoin/data/ -pid=dogecoind.pid -conf=dogecoin.conf
+ExecStop=/dogecoin/daemon/dogecoin-cli -datadir=/dogecoin/data/ stop
+ExecReload=/dogecoin/daemon/dogecoin-cli -datadir=/dogecoin/data/ stop ; /bin/sleep 60 ; /dogecoin/daemon/dogecoind -daemon -datadir=/dogecoin/data/ -pid=dogecoind.pid -conf=dogecoin.conf
+RestartSec=300
+WorkingDirectory=/dogecoin/data/
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
