@@ -1,4 +1,4 @@
-## CashTip - Bitcoin Cash tipbot for Telegram
+## DogeTip - Dogecoin tipbot for Telegram
 _This is a fork of [PandaTip-Telegram](https://github.com/DarthJahus/PandaTip-Telegram), a Pandacoin tipbot for Telegram, by [@DarthJahus](https://github.com/DarthJahus)._ 
 
 ### Dependencies 
@@ -19,38 +19,38 @@ Create a `config.json` **JSON** file and set up the following parameters:
  
     {
     	"telegram-token": "such:sicret-token",
-    	"telegram-botname": "CashTip",
-    	"rpc-uri": "http://127.0.0.1:8332",
-    	"rpc-user": "cashtip",
+    	"telegram-botname": "DogeTip",
+    	"rpc-uri": "http://127.0.0.1:22555",
+    	"rpc-user": "dogetip",
     	"rpc-psw": "suchpassword",
     	"admins": [-0, 0],
-    	"spam_filter": [5, 60]
+    	"spam_filter": [10, 2]
     }
 
 * `telegram-token`: Your bot's unique and secret token.
   > Create a new bot by talking with [@BotFather](https://t.me/BotFather) to get one. 
 * `rpc-uri`: Address and port for the daemon.
   > We do not advice to expose the port to external network. Please, be cautious.
-  > See [next section](#bitcoin-daemon-configuration) to allow access for network addresses.
+  > See [next section](#dogecoin-daemon-configuration) to allow access for network addresses.
 * `rpc-user`, `rpc-psw`: Username and password for the daemon.
-  > You can set them in the `bitcoin.conf` file ([see next section](#bitcoin-daemon-configuration)).
+  > You can set them in the `bitcoin.conf` file ([see next section](#dogecoin-daemon-configuration)).
 * `admins`: An array of administrators' Telegram UserID (as integers).
   > You can send `/user_id` to [@ContremaitreBot](https://t.me/ContremaitreBot) to know your UserID.
 * `spam_filter`: An array of two integers. The first value is the number of actions a user can perform in a period of time, the 2nd value defines that period of time in seconds.
   > `"spam_filter": [5, 60]` means that users cannot perform more than 5 actions per minute.
 
 
-### Bitcoin daemon configuration
+### Dogecoin daemon configuration
 
-A `bitcoin.conf` file is needed in data directory.
+A `dogecoin.conf` file is needed in data directory.
 
 (sample)
 
     server=1
     daemon=1
-    rpcuser=muchuser
-    rpcpassword=suchsicret
-    pid=bitcoind.pid
+    rpcuser=dogetip
+    rpcpassword=suchpassword
+    pid=dogecoind.pid
     rpcallowip=127.0.0.1
     rpcconnect=127.0.0.1
 
