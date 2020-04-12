@@ -1,4 +1,4 @@
-# Jahus, 2018-01-28
+# ail_lia, 2020_April_12
 
 import requests
 import json
@@ -32,13 +32,13 @@ class Wrapper(object, MethodMissing):
 			return self.http_post_request(name, args)
 
 
-class BitcoinRPC(object):
+class DogecoinRPC(object):
 	def __init__(self, uri, auth):
 		self.uri = uri
 		self.auth = auth
 
 	def http_post_request(self, name, args):
-		data = {"jsonrpc": "1.0", "id": "cashtip", "method": name, "params": args}
+		data = {"jsonrpc": "1.0", "id": "dogetip", "method": name, "params": args}
 		try:
 			req = requests.post(
 				url=self.uri,
@@ -69,11 +69,11 @@ class BitcoinRPC(object):
 
 def main():
 	_config = load_file_json("config.json") 
-	myBitcoin = Wrapper(BitcoinRPC(_config["rpc-uri"], (_config["rpc-user"], _config["rpc-psw"])))
+	myDogecoin = Wrapper(DogecoinRPC(_config["rpc-uri"], (_config["rpc-user"], _config["rpc-psw"])))
 	# getaccountaddress creates an address if account doesn't exist.
 	# warning, getaccountaddress will create a new address for the account if its current address has been used
 	# use getaddressesbyaccount instead
-	res = myBitcoin.getaddressesbyaccount("@arasdawn")
+	res = myDogecoin.getaddressesbyaccount("@igayy9")
 	if not res["success"]:
 		print("Error: %s" % res["message"])
 	else:
@@ -82,7 +82,7 @@ def main():
 		else:
 			print(json.dumps(res["result"]["result"]))
 	return
-	res = myBitcoin.sendmany("CashTip", {"@jahus": 0.00005, "1234": 0.00006})
+	res = myDogecoin.sendmany("DogeTip", {"@ail_liaa": 0.1, "1234": 0.1})
 	if not res["success"]:
 		print("Error: %s" % res["message"])
 	else:
