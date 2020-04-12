@@ -1,0 +1,29 @@
+# cp ./dogetip.service /lib/systemd/system/dogetip.service
+# chmod 644 /lib/systemd/system/dogetip.service
+# Don't forget #!/usr/bin/python
+# chmod +x ./DogecoinTip.py
+# systemctl daemon-reload
+# systemctl enable dogetip.service
+# systemctl start dogetip.service
+# Status:
+# systemctl status dogetip.service
+# To stop:
+# systemctl stop dogetip.service
+# To remove
+# systemctl disable dogetip.service
+
+[Unit]
+Description=DogeTipBot
+After=syslog.target
+After=network.target
+After=dogecoind.service
+
+[Service]
+Type=simple
+ExecStart=/dogecoin/Dogetip/DogecoinTip.py
+WorkingDirectory=/dogecoin/Dogetip/
+Restart=always
+RestartSec=600
+
+[Install]
+WantedBy=multi-user.target
