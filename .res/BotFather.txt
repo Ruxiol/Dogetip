@@ -1,9 +1,9 @@
 /setdescription
 This bot allows you to receive, store and send Bitcoin Cash on Telegram.
 
-💰 To get started, create a deposit address or ask a friend to send you some pandas.
+💰 To get started, create a deposit address or ask a friend to send you some doge.
 
-💁 Once you have some bits, share them with your friends.
+💁 Once you have some dogetoshi, share them with your friends.
 
 🌐  You can withdraw your bits at any time.
 
@@ -11,8 +11,8 @@ This bot allows you to receive, store and send Bitcoin Cash on Telegram.
 Use the command /help!
 
 /setabouttext
-Tipping bot for Bitcoin Cash.
-Deposit, store and share bits with your friends.
+Tipping bot for Dogecoin.
+Deposit, store and share Dogetoshi with your friends.
 
 /setcommands
 deposit -Get your deposit address
