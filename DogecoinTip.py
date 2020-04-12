@@ -6,7 +6,7 @@ import emoji
 from telegram.ext import Updater
 from telegram.ext import CommandHandler, CallbackQueryHandler
 from telegram import ParseMode, InlineKeyboardButton, InlineKeyboardMarkup
-from BitcoinRPC import BitcoinRPC, Wrapper as RPCWrapper
+from DogecoinRPC import DogecoinRPC, Wrapper as RPCWrapper
 from HelperFunctions import *
 import logging
 logging.basicConfig(
@@ -24,19 +24,19 @@ _paused = False
 _spam_filter = AntiSpamFilter(config["spam_filter"][0], config["spam_filter"][1])
 
 # Constants
-__wallet_rpc = RPCWrapper(BitcoinRPC(config["rpc-uri"], (config["rpc-user"], config["rpc-psw"])))
-__fee_std = 0.000010
+__wallet_rpc = RPCWrapper(DogecoinRPC(config["rpc-uri"], (config["rpc-user"], config["rpc-psw"])))
+__fee_std = 0.010
 __units = {
-	"parent_name": "BCH",
+	"parent_name": "Doge",
 	"parent_format": "%.4f",
-	"name": "bits",
+	"name": "dogetoshi",
 	"symbol": u"\u20bf",
-	"multiplier": 0.000001,
-	"multiplier_threshold": 0.01
+	"multiplier": 0.0001,
+	"multiplier_threshold": 0.1
 }
 __rpc_getbalance_account = True  # If True, use getbalance <account>, else use getbalance <address>
 __rpc_sendmany_account = False   # If False, use sendmany <source_account> {"address": amount}, else {"account": amount}
-__blockchain_explorer_tx = "https://blockchair.com/bitcoin-cash/transaction/"
+__blockchain_explorer_tx = "https://blockchair.com/dogecoin/transactions/"
 __minconf = 0  # See issue #4 (https://github.com/DarthJahus/CashTip-Telegram/issues/4)
 
 
