@@ -1,7 +1,7 @@
 {
 	"welcome": {
 		"en": [
-			":sparkle: Hi! This is a tipbot for Dogecoin.",
+			":sparkle: Hi! This is a tipbot for RXC.",
 			"You can use it to share bits with your friends."
 		]
 	},
@@ -9,10 +9,10 @@
 		"en": [
 			"This bot allows you to receive, store and send bits on Telegram.",
 			"",
-			":moneybag: To get started, create a deposit address or ask a friend to send you some dogetoshi.",
+			":moneybag: To get started, create a deposit address or ask a friend to send you some RXC.",
 			"Use /deposit or /address _in private_ to know your own address on the bot.",
 			"Then you can send funds to that address the same way as you usually transfer funds with your wallet.",
-			"Use /balance _in private_ to know how much Dogecoin you have got in your account.",
+			"Use /balance _in private_ to know how much RXC you have got in your account.",
 			"",
 			":person_tipping_hand: Once you have some bits, share them with your friends.",
 			"Use `/tip <user> <amount>`",
@@ -22,8 +22,8 @@
 			"Use `/withdraw <address> <amount>`",
 			"Please double check your address before submitting, as we cannot undo that process.",
 			"",
-			":bulb: This bot uses \"dogetoshi\" (shown as D) instead of dogecoins (DOGE).",
-			"`1 dogetoshi = 0.01 Doge`",
+			":bulb: This bot uses \"rux\" (shown as r) instead of RuxCrypto (RXC).",
+			"`1 rux = 0.00000001 RXC`",
 			"",
 			"",
 			"Need more advanced help and usage tricks?",
@@ -57,7 +57,7 @@
 	},
 	"about": {
 		"en": [
-			"This is a tipbot for Dogecoin.",
+			"This is a tipbot for RXC.",
 			"Made by [@ail_liaa](https://t.me/ail_liaa)"
 		]
 	},
