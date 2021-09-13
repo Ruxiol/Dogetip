@@ -1,7 +1,7 @@
 {
 	"telegram-token": "such:sicret-token",
-	"telegram-botname": "DogeTip",
-	"rpc-uri": "http://127.0.0.1:22555",
+	"telegram-botname": "RXC-Tipbot",
+	"rpc-uri": "http://127.0.0.1:23505",
 	"rpc-user": "dogetip",
 	"rpc-psw": "suchpassword",
 	"admins": [-0, 0],
